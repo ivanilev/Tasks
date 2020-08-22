@@ -1,10 +1,13 @@
 import React from 'react';
-import VisibleTaskList from './containers/VisibleTaskList';
+import SideSection from './components/SideSection';
 
 function App() {
   return (
     <div className="App">
-      <VisibleTaskList />
+      <SideSection />
+      <section className='main'>
+        TODO
+      </section>
     </div>
   );
 }
