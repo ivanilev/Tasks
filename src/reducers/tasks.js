@@ -12,25 +12,25 @@ const initialState = [
     id: 1
   },
   {
-    title: 'ASd task',
+    title: 'HOME task',
     category: 'Home',
     isChecked: false,
     id: 2
   },
   {
-    title: 'ASDSAD task',
+    title: 'WORK task',
     category: 'Work',
     isChecked: true,
     id: 3
   },
   {
-    title: 'ASDASDASDASDADS task',
+    title: 'WORK task',
     category: 'Work',
     isChecked: false,
     id: 4
   },
   {
-    title: 'ASDASDASDASDAS task',
+    title: 'WORK task',
     category: 'Work',
     isChecked: true,
     id: 5

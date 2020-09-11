@@ -2,9 +2,10 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import TaskList from '../components/TaskList'
 import * as TaskActions from '../actions'
+import { getTasksByCategory } from '../selectors'
 
 const mapStateToProps = state => ({
-  filteredTasks: state.tasks
+  filteredTasks: getTasksByCategory(state)
 })
 
 const mapDispatchToProps = dispatch => ({
