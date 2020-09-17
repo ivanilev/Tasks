@@ -8,6 +8,7 @@ import reducer from './reducers';
 import './styles/index.scss';
 
 const store = createStore(reducer);
+
 render(
   <Provider store={store}>
     <App />

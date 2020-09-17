@@ -8,9 +8,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Container className='main-container'>
-          <Sidebar
-            style={{display: 'flex', flexDirection: 'column', borderRight: '2px solid #00a800'}}
-          >
+          <Sidebar className='sideBar'>
             <Sidenav.Header>
               <div className="tasks-header">
                 <h1>Tasks</h1>
