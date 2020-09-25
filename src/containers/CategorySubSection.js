@@ -1,6 +1,6 @@
 import CategorySubSection from '../components/CategorySubSection'
 import { connect } from 'react-redux'
-import { addNewCategory, setCategoryFilter } from '../actions'
+import { addNewCategory, setCategoryFilter, changeView } from '../actions'
 
 const mapStateToProps = (state) => ({
   categories: state.categories
@@ -8,6 +8,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addCategory: (text) => dispatch(addNewCategory(text)),
+  changeView: (view) => {
+    dispatch(changeView(view))
+  },
   setFilter: (category) => {
     dispatch(setCategoryFilter(category))
   }

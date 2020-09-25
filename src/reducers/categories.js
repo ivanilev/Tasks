@@ -1,3 +1,5 @@
+import { ADD_CATEGORY } from '../constants/ActionTypes';
+
 const initialState = [
   {
     id: 0,
@@ -12,7 +14,7 @@ const initialState = [
 
 export default function categories(state = initialState, action) {
   switch (action.type) {
-    case 'ADD_CATEGORY':
+    case ADD_CATEGORY:
       return [
         ...state,
         {

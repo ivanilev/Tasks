@@ -1,9 +1,22 @@
 import React from 'react';
-import {Container, Sidebar,  Header, Footer, Content, Sidenav, Nav} from 'rsuite';
+import {Container, Sidebar, Sidenav, Nav} from 'rsuite';
 import CategorySubSection from './containers/CategorySubSection';
-import VisibleTaskList from './containers/VisibleTaskList';
-
+import TasksTodaySubsection from './containers/TasksTodaySubsection';
+import MainSection from './containers/MainSection'
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      activeKey: '1'
+    };
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+  handleSelect(eventKey) {
+    this.setState({
+      activeKey: eventKey
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -16,24 +29,17 @@ class App extends React.Component {
             </Sidenav.Header>
             <Sidenav
               appearance="subtle"
+              activeKey={this.state.activeKey}
             >
               <Sidenav.Body>
                 <Nav>
                   <CategorySubSection />
+                  <TasksTodaySubsection />
                 </Nav>
               </Sidenav.Body>
             </Sidenav>
           </Sidebar>
-          
-          <Container
-            style={{padding: '8px'}}
-          >
-            <Header>Header</Header>
-            <Content>
-              <VisibleTaskList />
-            </Content>
-            <Footer>Footer</Footer>
-          </Container>
+            <MainSection />
         </Container>
       </div>
     );

@@ -1,23 +1,26 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import { Dropdown, Icon } from 'rsuite';
 import CategoryInput from './CategoryInput';
+import { VIEW_TASKS } from '../constants/Views'
 
 class CategorySubSection extends React.Component {
 
   state = {
-    adding: false,
+    addingCategory: false,
   }
-
   categoryClicked(category) {
     this.props.setFilter(category)
+    this.props.changeView(VIEW_TASKS)
   }
   AddCategory(text) {
-    // TODO VALIDATION
-    if (!this.props.categories.some(element => element.name === text)) {
+    if (
+          text !== '' 
+          && typeof text !== undefined
+          && !this.props.categories.some(element => element.name === text)
+       ) {
       this.props.addCategory(text)
     }
-    this.setState({adding: false})
+    this.setState({addingCategory: false})
   }
 
   render() {
@@ -32,12 +35,12 @@ class CategorySubSection extends React.Component {
           <Dropdown.Item
             style={{ marginTop: '10px'}}
             icon={<Icon icon="plus" />}
-            onSelect = {() => this.setState({adding: true})}
+            onSelect = {() => this.setState({addingCategory: true})}
           >
             Add Category
           </Dropdown.Item>
           {
-            this.state.adding ?
+            this.state.addingCategory ?
               <CategoryInput onSave={this.AddCategory.bind(this)} /> 
             : null
           }

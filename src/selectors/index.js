@@ -20,8 +20,15 @@ export const getTasksByCategory = createSelector(
   [getTasks, getCategoryFilter],
   (tasks, categoryFilter) => {
     if(categoryFilter === 'NONE') {
-      return tasks
+      return []
     }
     return tasks.filter(task => task.category === categoryFilter)
+  }
+)
+
+export const getTodaysTasks = createSelector(
+  [getTasks],
+  (tasks) => {
+    return tasks.filter(task => (task.deadline - Date.now() <= 86400000)) // One day (24 hours) is 86 400 000 milliseconds.
   }
 )
