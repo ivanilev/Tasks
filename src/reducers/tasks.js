@@ -4,7 +4,7 @@ import * as priorities from '../constants/Priorities';
 const initialState = [
   {
     title: 'First task',
-    deadline: 1601644696434,
+    deadline: 1601358183811,
     priority: priorities.HIGH_PRIORITY,
     category: 'Home',
     isChecked: false,
@@ -19,32 +19,32 @@ const initialState = [
     id: 1
   },
   {
-    title: 'HOME task',
-    deadline: 1600887297576,
+    title: 'Low priority home task',
+    deadline: Date.now() + 25000000,
     priority: priorities.LOW_PRIORITY,
     category: 'Home',
     isChecked: false,
     id: 2
   },
   {
-    title: 'WORK task',
-    deadline: 1601635667834,
-    priority: priorities.MEDIUM_PRIORITY,
+    title: 'HIGH priority task',
+    deadline: Date.now() + 5000000,
+    priority: priorities.HIGH_PRIORITY,
     category: 'Work',
-    isChecked: true,
+    isChecked: false,
     id: 3
   },
   {
-    title: 'WORK task',
-    deadline: 1601635665213,
+    title: 'Medium priority task',
+    deadline: Date.now() + 5000000,
     priority: priorities.MEDIUM_PRIORITY,
     category: 'Work',
-    isChecked: false,
+    isChecked: true,
     id: 4
   },
   {
     title: 'WORK task',
-    deadline: 1601635667834,
+    deadline: Date.now() + 5000000,
     priority: priorities.HIGH_PRIORITY,
     category: 'Work',
     isChecked: true,

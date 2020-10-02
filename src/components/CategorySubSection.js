@@ -6,7 +6,7 @@ import { VIEW_TASKS } from '../constants/Views'
 class CategorySubSection extends React.Component {
 
   state = {
-    addingCategory: false,
+    addingCategory: false
   }
   categoryClicked(category) {
     this.props.setFilter(category)
@@ -18,7 +18,7 @@ class CategorySubSection extends React.Component {
           && typeof text !== undefined
           && !this.props.categories.some(element => element.name === text)
        ) {
-      this.props.addCategory(text)
+      this.props.addCategory(text.trim())
     }
     this.setState({addingCategory: false})
   }

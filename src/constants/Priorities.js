@@ -1,3 +1,3 @@
-export const HIGH_PRIORITY = 'HIGH'
-export const MEDIUM_PRIORITY = 'MEDIUM'
-export const LOW_PRIORITY = 'LOW'
+export const HIGH_PRIORITY = {title: 'HIGH', priorityValue: 3}
+export const MEDIUM_PRIORITY = {title: 'MEDIUM', priorityValue: 2}
+export const LOW_PRIORITY = {title: 'LOW', priorityValue: 1}
