@@ -1,4 +1,4 @@
-import { COMPLETE_TASK, SAVE_CHANGES } from '../constants/ActionTypes';
+import { COMPLETE_TASK } from '../constants/ActionTypes';
 import * as priorities from '../constants/Priorities';
 
 const initialState = [
@@ -65,11 +65,6 @@ export default function tasks(state = initialState, action) {
         task.id === action.id ?
           { ...task, isChecked: !task.isChecked } :
           task
-      )
-    case SAVE_CHANGES:
-      console.log(action)
-      return state.map(task => 
-        task.id === action.id ? action : task
       )
     default:
       return state
