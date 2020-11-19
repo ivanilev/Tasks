@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Input } from 'rsuite';
 
 export default class CategoryInput extends Component {
   static propTypes = {
@@ -8,29 +9,30 @@ export default class CategoryInput extends Component {
   state = {
     text: this.props.text || ''
   }
-  handleSubmit = e => {
+  handleSubmit(e) {
     const text = e.target.value.trim()
     if (e.which === 13) {
       this.props.onSave(text)
     }
   }
-  handleChange = e => {
-    this.setState({ text: e.target.value })
+  handleChange(inputText) {
+    this.setState({ text: inputText })
   }
-  handleBlur = e => {
+  handleBlur(e) {
     this.props.onSave(e.target.value)
   }
   render() {
     return (
-      <input
+      <Input
         className="category__input-field"
         type="text"
+        size="sm"
         placeholder={'New category...'}
         autoFocus={true}
         value={this.state.text}
-        onBlur={this.handleBlur}
-        onChange={this.handleChange}
-        onKeyDown={this.handleSubmit} />
+        onBlur={(e) => this.handleBlur(e)}
+        onChange={(text) => this.handleChange(text)}
+        onKeyDown={(e) => this.handleSubmit(e)} />
     )
   }
 }

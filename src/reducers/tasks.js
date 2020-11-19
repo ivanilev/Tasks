@@ -1,4 +1,4 @@
-import { COMPLETE_TASK } from '../constants/ActionTypes';
+import { COMPLETE_TASK, SAVE_CHANGES } from '../constants/ActionTypes';
 import * as priorities from '../constants/Priorities';
 
 const initialState = [
@@ -8,7 +8,8 @@ const initialState = [
     priority: priorities.HIGH_PRIORITY,
     category: 'Home',
     isChecked: false,
-    id: 0
+    id: 0,
+    description: ''
   },
   {
     title: 'Second task',
@@ -16,7 +17,8 @@ const initialState = [
     priority: priorities.HIGH_PRIORITY,
     category: 'Home',
     isChecked: true,
-    id: 1
+    id: 1,
+    description: 'This is a Second task! about home whatevs!'
   },
   {
     title: 'Low priority home task',
@@ -24,7 +26,8 @@ const initialState = [
     priority: priorities.LOW_PRIORITY,
     category: 'Home',
     isChecked: false,
-    id: 2
+    id: 2,
+    description: ''
   },
   {
     title: 'HIGH priority task',
@@ -32,7 +35,8 @@ const initialState = [
     priority: priorities.HIGH_PRIORITY,
     category: 'Work',
     isChecked: false,
-    id: 3
+    id: 3,
+    description: 'This is a HIGH priority task! about WORK!'
   },
   {
     title: 'Medium priority task',
@@ -40,15 +44,17 @@ const initialState = [
     priority: priorities.MEDIUM_PRIORITY,
     category: 'Work',
     isChecked: true,
-    id: 4
+    id: 4,
+    description: 'This is a Medium priority task! about WORK!'
   },
   {
     title: 'WORK task',
     deadline: Date.now() + 5000000,
-    priority: priorities.HIGH_PRIORITY,
+    priority: priorities.LOW_PRIORITY,
     category: 'Work',
     isChecked: true,
-    id: 5
+    id: 5,
+    description: ''
   }
 ]
 
@@ -60,7 +66,11 @@ export default function tasks(state = initialState, action) {
           { ...task, isChecked: !task.isChecked } :
           task
       )
-
+    case SAVE_CHANGES:
+      console.log(action)
+      return state.map(task => 
+        task.id === action.id ? action : task
+      )
     default:
       return state
   }

@@ -1,0 +1,17 @@
+.task-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #575757;
+}
+
+.task-item__deadline--low-priority {
+  color: #2b850d;
+}
+
+.task-item__deadline--medium-priority {
+  color: #e0d319;
+}
+
+.task-item__deadline--high-priority {
+  color: #d62915;
+}

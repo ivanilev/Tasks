@@ -25,7 +25,7 @@ class CategorySubSection extends React.Component {
 
   render() {
     return (
-        <Dropdown 
+        <Dropdown
           eventKey="1"
           trigger="hover"
           title="Categories"
@@ -41,7 +41,7 @@ class CategorySubSection extends React.Component {
           </Dropdown.Item>
           {
             this.state.addingCategory ?
-              <CategoryInput onSave={this.AddCategory.bind(this)} /> 
+              <CategoryInput onSave={this.AddCategory.bind(this)} />
             : null
           }
           <Dropdown.Item divider/>

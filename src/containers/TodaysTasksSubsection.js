@@ -1,4 +1,4 @@
-import TasksTodaySubsection from '../components/TasksTodaySubsection'
+import TodaysTasksSubsection from '../components/TodaysTasksSubsection'
 import { connect } from 'react-redux'
 import { changeView } from '../actions'
 import { getTodaysTasks } from '../selectors'
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TasksTodaySubsection)
+)(TodaysTasksSubsection)

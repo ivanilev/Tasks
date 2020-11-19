@@ -1,24 +1,19 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import Moment from 'react-moment'
 
 export default class TaskItem extends Component {
-  static propTypes = {
-    task: PropTypes.object.isRequired,
-    completeTask: PropTypes.func.isRequired
-  }
   render() {
-    const { task, completeTask } = this.props
-
+    const { task } = this.props
     let element = (
-      <div className="view">
-         <input className="toggle"
-                 type="checkbox"
-                 checked={task.isChecked}
-                 onChange={() => completeTask(task.id)} />
-          <label>
-            {task.title}
-          </label>
+      <div className="task-item">
+        <h4>{task.title}</h4>
+        <Moment 
+          to={task.deadline}
+          className={'task-item__deadline--'.concat(task.priority.title.toLowerCase(), '-priority')}
+        >
+          {Date.now()}
+        </Moment>
       </div>
     )
 

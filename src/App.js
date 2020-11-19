@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Sidebar, Sidenav, Nav} from 'rsuite';
 import CategorySubSection from './containers/CategorySubSection';
-import TasksTodaySubsection from './containers/TasksTodaySubsection';
+import TodaysTasksSubsection from './containers/TodaysTasksSubsection';
 import MainSection from './containers/MainSection'
 class App extends React.Component {
   constructor() {
@@ -23,7 +23,7 @@ class App extends React.Component {
         <Container className='main-container'>
           <Sidebar className='sideBar'>
             <Sidenav.Header>
-              <div className="tasks-header">
+              <div className="tasks__header">
                 <h1>Tasks</h1>
               </div>
             </Sidenav.Header>
@@ -34,7 +34,7 @@ class App extends React.Component {
               <Sidenav.Body>
                 <Nav>
                   <CategorySubSection />
-                  <TasksTodaySubsection />
+                  <TodaysTasksSubsection />
                 </Nav>
               </Sidenav.Body>
             </Sidenav>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Dropdown, Icon, IconButton } from 'rsuite';
 import { VIEW_TASK } from '../constants/Views'
 
-class TasksTodaySubsection extends React.Component {
+class TodaysTasksSubsection extends React.Component {
   state = {
     sortType: 'asc'
   };
@@ -57,4 +57,4 @@ class TasksTodaySubsection extends React.Component {
   }
 }
 
-export default TasksTodaySubsection
+export default TodaysTasksSubsection
